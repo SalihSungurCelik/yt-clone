@@ -5,4 +5,26 @@
 body {
   background: black;
   color: white;
+  overflow: hidden;
+}
+
+.video-layout {
+  width: 100%;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+  padding: 20px;
+}
+
+.video-layout::-webkit-scrollbar {
+  background: black;
+  width: 9px;
+}
+
+.video-layout::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
 }
