@@ -1,9 +1,19 @@
 import millify from "millify";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// RICHTHUMBNAIL AYARLANAMADI!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const VideoCard = ({ video }) => {
-  // console.log(video.thumbnail);
+  // console.log(video.richThumbnail);
+  const navigate = useNavigate();
+  // const [isHover, setIsHover] = useState(false);
+  // console.log(isHover);
   return (
-    <div className="cursor-pointer">
+    <div
+      // onMouseEnter={() => setIsHover(true)}
+      // onMouseLeave={() => setIsHover(false)}
+      onClick={() => navigate(`/watch?v=${video.videoId}`)}
+      className="cursor-pointer"
+    >
       {/* Fotoğraf kısmı */}
       <div>
         <img
@@ -15,8 +25,9 @@ const VideoCard = ({ video }) => {
       <div className="flex gap-4 mt-5">
         <img
           src={
-            video.channelThumbnail[video.channelThumbnail.length - 1]?.url ??
-            "./default.png"
+            video.channelThumbnail
+              ? video.channelThumbnail[0]?.url
+              : "./default.png"
           }
           className="w-14 h-14 rounded-full"
         />

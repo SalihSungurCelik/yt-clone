@@ -23,7 +23,7 @@ export const YoutubeProvider = ({ children }) => {
     // eğer seçilen kategorinin tipi category ise search endpointine istek atıcaz
     if (selectedCategory.type === "category") {
       getData(`/search?query=${selectedCategory.name}`).then((data) =>
-        setVideos(data)
+        setVideos(data.data)
       );
     }
   }, [selectedCategory]);

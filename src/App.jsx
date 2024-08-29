@@ -9,8 +9,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Feed />} />
-        <Route path="/watch" element={<SearchResults />} />
-        <Route path="/results" element={<VideoDetail />} />
+        <Route path="/watch" element={<VideoDetail />} />
+        <Route path="/results" element={<SearchResults />} />
       </Routes>
     </BrowserRouter>
   );
